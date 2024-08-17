@@ -1,0 +1,26 @@
+{% block content%}
+<div>
+    <div>
+        <h1>singup</h1>
+        <form method='POST'>
+            {% csrf_token %}
+            <div>
+                <label for ='username'> username:</label>
+                {{form.username}}
+            </div>
+        
+            <div>
+                <label for="password1"> password:</label>
+                {{form.password1}}
+            </div>
+            <div>
+                <label for="password2"> password:</label>
+                {{form.password2}}
+            </div>
+    
+        <button type='summit'> login</button>
+        </form>
+        <p> do not have an account? <a href="{% url 'singup' %}"> sign up </a></p>
+    
+    
+{% endblock content%}

@@ -1,0 +1,28 @@
+{% extends  "base/main.html" %}
+{% block content%}
+<div>
+    <h1>all todos</h1>
+        
+            {%for todo in todos%}
+             <a href="{% url 'details' todo.id %}">
+             <div class="todos">
+             <h2> {{todo.title}}<h2>
+               
+        <img src="{{todo.image.url}}" alt ="todo-image"> 
+            </div>
+        </a>
+        <a href="{% url 'update' todo.id %}">update</a>
+        <div>
+            <h2> {{todo.details}} </h2>
+            <p> {{todo.discription}} </p>
+
+        </div>
+        <div>
+            <a href="{% url 'delete' todo.id %}">delete</a>
+        </div>
+        
+        {%endfor%}
+
+</div>
+ 
+{% endblock content%}

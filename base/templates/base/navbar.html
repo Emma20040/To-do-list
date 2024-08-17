@@ -1,0 +1,29 @@
+<nav  class="todo-nav">
+
+    <div>
+
+        <h1> TODO</h1>
+    <div>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'create' %}">create</a></li>
+            {% if request.user.is_authenticated %}
+            <li><a href='#'> logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}"> login</a></li>
+             {% endif %}
+        
+        </ul>
+        <div>
+            {% comment %} <input type='text ' name='q' placeholder='search'> {% endcomment %}
+            <form action='' method='get'>
+                <input type='text' name='q' placeholder="">
+                <button type='summit' >search</button>
+        </div>
+    </div>
+    </div>
+
+
+
+
+</nav>

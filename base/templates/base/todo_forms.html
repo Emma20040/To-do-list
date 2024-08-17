@@ -1,0 +1,22 @@
+{% extends 'base/main.html' %}
+{%block content%}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>
+        <label for='title'>Tittle:</label>
+        {{form.title}}
+    </div>
+    <div>
+        <label for='discription'> Discription:</label>
+            {{form.discription}}
+        </div>
+    
+    <div>
+        <label for='image'> image:</label>
+        {{form.image}}
+    </div>
+    
+    <button type="summit">create</button>
+</form>
+{%endblock content%}
+
